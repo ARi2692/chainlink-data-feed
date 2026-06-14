@@ -144,30 +144,29 @@ The contract is already deployed at `0xfE542F38e1cc89ef7e66D6B7946020Ed4d3675b6`
 ### Simulate (no broadcast — dry run only)
 
 ```bash
-cre workflow simulate my-workflow 
+cre workflow simulate my-workflow
 ```
 
 ### Simulate with broadcast (writes on-chain)
 
 ```bash
-cre workflow simulate my-workflow --broadcast 
+cre workflow simulate my-workflow --broadcast
 ```
 
-```bash
-┃HTTP Trigger Configuration              
-┃Enter a file path or JSON directly for the HTTP trigger  
-┃ > {"key": "value"} or ./payload.json 
+When prompted, for **HTTP trigger** paste the payload directly:
+
+```
+┃ HTTP Trigger Configuration
+┃ Enter a file path or JSON directly for the HTTP trigger
+┃ > {"key": "value"} or ./payload.json
 ```
 
-CRE Workflow Payload for HTTP trigger:
+### CRE Workflow Payload
+
 ```bash
 # ETH
 {"token":"ETH"}
-```
 
-### Other supported tokens
-
-```bash
 # BTC
 {"token":"BTC"}
 
@@ -177,6 +176,8 @@ CRE Workflow Payload for HTTP trigger:
 # DAI
 {"token":"DAI"}
 ```
+
+Paste any of the above when prompted by the CLI.
 
 ---
 
