@@ -46,7 +46,10 @@ To add more tokens, add an entry to `dataFeeds` in `config.staging.json` — no 
 ## Prerequisites
 
 - Node.js v18+
-- Bun — ```bash npm install -g bun ```
+- Bun — 
+    ```bash 
+    npm install -g bun 
+    ```
 - Chainlink CRE CLI — [install here](https://docs.chain.link/cre/getting-started/cli-installation)
 - A wallet with Sepolia ETH (for gas) — [Sepolia faucet](https://faucets.chain.link/sepolia)
 
