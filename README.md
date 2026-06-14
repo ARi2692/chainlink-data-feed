@@ -46,7 +46,7 @@ To add more tokens, add an entry to `dataFeeds` in `config.staging.json` — no 
 ## Prerequisites
 
 - Node.js v18+
-- Bun — npm install -g bun
+- Bun — ```bash npm install -g bun ```
 - Chainlink CRE CLI — [install here](https://docs.chain.link/cre/getting-started/cli-installation)
 - A wallet with Sepolia ETH (for gas) — [Sepolia faucet](https://faucets.chain.link/sepolia)
 
@@ -98,9 +98,9 @@ CRE_TARGET=staging-settings
 
 ### 5. Configure CRE Workflow
 
-The workflow config is in `config.staging.json`. The contract address and feed addresses are already set for ETHSepolia, but if you have deployed it you can update `PriceSnapshotAddress` accordingly. 
+The workflow config is in `config.staging.json`. Feed addresses are pre-configured for Ethereum Sepolia. If you deployed your own instance of `PriceSnapshot.sol`, update the `PriceSnapshotAddress` field with your deployed contract address.
 
-Get [Chainlink Price Feeds](https://docs.chain.link/data-feeds/price-feeds/addresses) address
+To add more tokens, use [Chainlink Price Feeds](https://docs.chain.link/data-feeds/price-feeds/addresses)
 
 ```json
 {
