@@ -6,6 +6,8 @@ import {
   Runtime,
   Runner,
   LAST_FINALIZED_BLOCK_NUMBER,
+  decodeJson,
+  HTTPPayload,
 } from "@chainlink/cre-sdk";
 import { encodeFunctionData, decodeFunctionResult, zeroAddress } from "viem";
 
@@ -87,10 +89,43 @@ function onCronTrigger(runtime: Runtime<Config>): bigint {
   return priceData[1];
 }
 
+// HTTP trigger handler (from httpCallback.ts pattern)
+function onHttpTrigger(runtime: Runtime<Config>, payload: HTTPPayload): string {
+  if (!payload.input || payload.input.length === 0) {
+    return "Empty request";
+  }
+
+  // Decode JSON payload
+  const inputData = decodeJson(payload.input);
+
+  runtime.log(`Received: ${JSON.stringify(inputData)}`);
+
+  // In our actual workflow, we would:
+  // 1. Extract alert data (id, asset, condition, targetPriceUsd, createdAt)
+  // 2. Encode as ABI parameters
+  // 3. Generate CRE report
+  // 4. Write to RuleRegistry contract
+
+  return "Success";
+}
+
 const initWorkflow = (config: Config) => {
   const cron = new cre.capabilities.CronCapability();
+  const http = new cre.capabilities.HTTPCapability();
 
-  return [cre.handler(cron.trigger({ schedule: config.schedule }), onCronTrigger)];
+  return [cre.handler(cron.trigger({ schedule: config.schedule }), onCronTrigger),
+    cre.handler(
+      http.trigger({
+        authorizedKeys: [
+          {
+            type: "KEY_TYPE_ECDSA_EVM",
+            publicKey: "", // Empty string for demo, required for production
+          },
+        ],
+      }),
+      onHttpTrigger
+    ),
+  ];
 };
 
 export async function main() {
