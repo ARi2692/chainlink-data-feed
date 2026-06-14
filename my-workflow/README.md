@@ -21,7 +21,7 @@ bun install
 Run the command from <b>project root directory</b>
 
 ```bash
-cre workflow simulate <path-to-workflow> --target=staging-settings
+cre workflow simulate <path-to-workflow> 
 ```
 
 It is recommended to look into other existing examples to see how to write a workflow. You can generate them by running the `cre init` command.
