@@ -1,0 +1,11 @@
+# env files
+*.env
+
+# solidity build artifacts
+out/
+cache/
+
+# typescript
+node_modules/
+bun.lock
+tmp.js
