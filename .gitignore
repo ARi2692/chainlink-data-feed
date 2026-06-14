@@ -1,5 +1,6 @@
 # env files
 *.env
+secrets.yaml
 
 # solidity build artifacts
 out/
@@ -9,3 +10,7 @@ cache/
 node_modules/
 bun.lock
 tmp.js
+
+# CRE build artifacts
+.cre_build_tmp.js
+.cre_build_tmp.js.map
