@@ -2,7 +2,15 @@
   "schedule": "*/30 * * * * *",
   "evms": [
     {
-      "chainSelectorName": "ethereum-testnet-sepolia"
+      "chainSelectorName": "ethereum-testnet-sepolia",
+      "PriceSnapshotAddress": "0xfE542F38e1cc89ef7e66D6B7946020Ed4d3675b6",
+      "gasLimit": "1000000",
+      "dataFeeds": {
+        "ETH": "0x694AA1769357215DE4FAC081bf1f309aDC325306",
+        "BTC": "0x1b44F3514812d835EB1BDB0acB33d3fA3351Ee43",
+        "LINK": "0xc59E3633BAAC79493d908e63626716e204A45EdF",
+        "DAI": "0x14866185B1962B63C3Ea9E03Bc1da838bab34C19"
+      }
     }
   ]
 }
